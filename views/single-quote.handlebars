@@ -1,0 +1,29 @@
+<h1>Update the task with an id of {{this.id}}</h1>
+
+<form data-id="{{this.id}}" class="update-form">
+
+  <div class="form-group">
+    <label for="tname">Task Name:</label>
+    <input type="text" id="tname" name="tname" value="{{this.task_name}}">
+  </div>
+
+  <div class="form-group">
+    <label for="tdesc">Task Description:</label>
+    <textarea id="tdesc" name="tdesc" rows="8" cols="40">{{this.task_description}}</textarea>
+  </div>
+      <div class="form-group">
+    <label for="status">Status:</label>
+    <select id="status" name="status" value="{{this.status}}">
+      <option value="Pending">Pending</option>
+      <option value="In Progress">In Progress</option>
+      <option value="Completed">Completed</option>
+    </select>
+  </div>
+    <div class="form-group">
+    <label for="ddate">Due Date:</label>
+    <input type="date" id="ddate" name="ddate" value="{{this.due_date}}">
+  </div>
+
+
+  <button type="submit">Update Task</button>
+</form>

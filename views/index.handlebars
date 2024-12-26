@@ -1,0 +1,49 @@
+<h1>Quotes App</h1>
+
+<p>Manage quotes with this app</p>
+
+<!-- Pass in data from server.js -->
+<ul>
+  {{#each tasks}}
+  	<li>
+  		<p><span class="label">ID:</span> {{this.id}}</p>
+      <p><span class="label">Task Name:</span> {{this.task_name}}</p>
+      <p><span class="label">Task Description:</span> {{this.task_description}}</p>
+      <p><span class="label">Stus:</span> {{this.status}}</p>
+      <p><span class="label">Due Date:</span> {{this.due_date}}</p>
+
+      <button data-id="{{this.id}}" class="deltask">Delete</button>
+
+      <a href="/{{this.id}}">Update this task</a>
+  	</li>
+  {{/each}}
+</ul>
+
+<h2>Add a Task</h2>
+
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="tname">Task Name:</label>
+    <input type="text" id="tname" name="tname">
+  </div>
+
+  <div class="form-group">
+    <label for="tdesc">Task Description:</label>
+    <textarea id="tdesc" name="tdesc" rows="8" cols="40"></textarea>
+  </div>
+    <div class="form-group">
+    <label for="status">Status:</label>
+    <select id="status" name="status">
+      <option value="Pending">Pending</option>
+      <option value="In Progress">In Progress</option>
+      <option value="Completed">Completed</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="ddate">Due Date:</label>
+    <input type="date" id="ddate" name="ddate">
+  </div>
+
+  <button type="submit">Add Task</button>
+</form>
